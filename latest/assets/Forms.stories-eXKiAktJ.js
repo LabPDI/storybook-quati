@@ -1,0 +1,8 @@
+import{F as p}from"./Forms--aLWhL24.js";import"./vue.esm-bundler-CoXWIl4n.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";import"./VContainer-CbGB1Tvg.js";/* empty css              */import"./locale-DOv4BzRv.js";import"./VRow-COInKKF_.js";import"./display-BsvpeBmF.js";import"./VDivider-C3UHzRSa.js";import"./location-DtgXVZia.js";import"./VTextField-BxcRWS7u.js";import"./index-BmgG2glB.js";import"./transition-C5vaQ_9E.js";import"./VInput-DTbtLWR7.js";import"./loader-DChbZvSt.js";import"./icons-C9r_7UFu.js";import"./VProgressLinear-DTy1bjZi.js";import"./forwardRefs-B931MWyl.js";import"./index-CdyaCy9i.js";import"./VAutocomplete-EowwHFbe.js";import"./VList-MTKudUhq.js";import"./ssrBoot-yniTzdfO.js";import"./createSimpleFunctional-6bMqqX06.js";import"./elevation-DkJfjdNP.js";import"./router-DY6Hexty.js";import"./index-DYSt8sZT.js";import"./VAvatar-djWgq1y8.js";import"./dialog-transition-IUZ_V87w.js";import"./VMenu-CFpjJkNA.js";import"./VOverlay-uwnXkKxC.js";import"./scopeId-BunObSK3.js";import"./resizeObserver-DhfBULCF.js";import"./VCheckboxBtn-DYjRjtQq.js";import"./VChip-dz1wZLgw.js";import"./VSlideGroup-C0jWYxWw.js";import"./goto-DAHqIRb6.js";import"./VSwitch-CzDSmlpG.js";import"./VProgressCircular-D9Z4yWyc.js";const P={tags:["!dev"],title:"Overview/Forms",component:p,parameters:{layout:"fullscreen"}},r={render:()=>({components:{FormsShowcase:p},template:"<FormsShowcase />"})};var o,t,m;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: () => ({
+    components: {
+      FormsShowcase
+    },
+    template: '<FormsShowcase />'
+  })
+}`,...(m=(t=r.parameters)==null?void 0:t.docs)==null?void 0:m.source}}};const Q=["Default"];export{r as Default,Q as __namedExportsOrder,P as default};
