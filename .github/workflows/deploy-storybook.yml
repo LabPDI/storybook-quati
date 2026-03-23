@@ -34,8 +34,21 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Add .nojekyll
+      - name: Add .nojekyll to Build
         run: touch storybook-static/.nojekyll
+
+      - name: Create root .nojekyll source
+        run: |
+          mkdir .nojekyll-root
+          touch .nojekyll-root/.nojekyll
+
+      - name: Deploy .nojekyll to branch root
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .nojekyll-root
+          target-folder: .
+          clean: false
 
       - name: Extract version
         id: package-version
