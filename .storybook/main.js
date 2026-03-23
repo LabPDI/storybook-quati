@@ -16,6 +16,6 @@ const config = {
     "name": "@storybook/vue3-vite",
     "options": {}
   },
-  "staticDirs": ["../src/stories"]
+  "staticDirs": ["../public"]
 };
 export default config;
