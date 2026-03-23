@@ -1,0 +1,8 @@
+import{S as p}from"./Surfaces-53Sqk7Xu.js";import"./vue.esm-bundler-CoXWIl4n.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";import"./VContainer-CbGB1Tvg.js";/* empty css              */import"./locale-DOv4BzRv.js";import"./VRow-COInKKF_.js";import"./display-BsvpeBmF.js";import"./VDivider-C3UHzRSa.js";import"./location-DtgXVZia.js";import"./VCard-orpoAt6K.js";import"./createSimpleFunctional-6bMqqX06.js";import"./loader-DChbZvSt.js";import"./icons-C9r_7UFu.js";import"./VProgressLinear-DTy1bjZi.js";import"./VAvatar-djWgq1y8.js";import"./elevation-DkJfjdNP.js";import"./router-DY6Hexty.js";import"./transition-C5vaQ_9E.js";import"./index-CdyaCy9i.js";import"./position-CHZW_SWx.js";import"./index-DYSt8sZT.js";import"./VBtn-Czbn-Y0x.js";import"./VProgressCircular-D9Z4yWyc.js";import"./resizeObserver-DhfBULCF.js";import"./VSheet-GkdZcvbj.js";import"./VDialog-C4mZxcMp.js";import"./VOverlay-uwnXkKxC.js";import"./forwardRefs-B931MWyl.js";import"./scopeId-BunObSK3.js";import"./dialog-transition-IUZ_V87w.js";import"./VSpacer-ARfV65Hs.js";import"./VMenu-CFpjJkNA.js";import"./VList-MTKudUhq.js";import"./index-BmgG2glB.js";import"./ssrBoot-yniTzdfO.js";const M={tags:["!dev"],title:"Overview/Surfaces",component:p,parameters:{layout:"fullscreen"}},r={render:()=>({components:{SurfacesShowcase:p},template:"<SurfacesShowcase />"})};var o,t,m;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: () => ({
+    components: {
+      SurfacesShowcase
+    },
+    template: '<SurfacesShowcase />'
+  })
+}`,...(m=(t=r.parameters)==null?void 0:t.docs)==null?void 0:m.source}}};const N=["Default"];export{r as Default,N as __namedExportsOrder,M as default};
