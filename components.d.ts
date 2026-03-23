@@ -8,7 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AnimatedLogo: typeof import('./src/components/AnimatedLogo.vue')['default']
-    Background: typeof import('./src/components/background.vue')['default']
+    Background: typeof import('./src/components/Background.vue')['default']
     QuatiMascot: typeof import('./src/components/QuatiMascot.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

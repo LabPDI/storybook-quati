@@ -1,5 +1,5 @@
 <script setup>
-import Background from '@/components/background.vue'
+import AnimatedLogo from '@/components/AnimatedLogo.vue'
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import Background from '@/components/background.vue'
     <v-card class="mb-8 pa-8" rounded="xl" elevation="0">
       <v-row align="center" no-gutters>
         <v-col cols="12" md="5">
-          <Background text-part1="Qua" text-part2="ti" view-box="0 0 360 200" :part2-offset-x="35" />
+          <AnimatedLogo text-part1="Qua" text-part2="ti" view-box="0 0 360 200" :part2-offset-x="35" />
         </v-col>
         <v-col cols="12" md="7" class="pl-md-8">
           <h1 class="text-h3 font-weight-black">Plataforma Quati</h1>

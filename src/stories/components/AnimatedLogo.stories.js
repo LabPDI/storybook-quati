@@ -22,11 +22,11 @@ export const Default = {
     part2OffsetX: 30,
   },
   render: (args) => ({
-    components: { Background },
+    components: { AnimatedLogo },
     setup() {
       return { args };
     },
-    template: '<Background v-bind="args" />',
+    template: '<AnimatedLogo v-bind="args" />',
   }),
 };
 
@@ -36,13 +36,13 @@ export const AbstractMode = {
     abstract: true,
   },
   render: (args) => ({
-    components: { Background },
+    components: { AnimatedLogo },
     setup() {
       return { args };
     },
     template: `
-      <div style="width: 100vw; height: 100vh; background: #294964;">
-        <Background v-bind="args" />
+      <div style="width: 100vw; height: 100vh; AnimatedLogo: #294964;">
+        <AnimatedLogo v-bind="args" />
         <div style="position: relative; z-index: 10; padding: 2rem; color: white;">
           <h1>Modo Abstrato Ativo</h1>
           <p>Este fundo deve estar borrado e animado.</p>

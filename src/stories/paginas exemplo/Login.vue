@@ -3,7 +3,7 @@
     <toolbar page-title="Login" current-path="/login" :user-logged-in="false" :environment="environment" />
 
     <v-container fluid class="login-container d-flex align-center justify-center">
-      <background textPart1="Qua" textPart2="ti" abstract style="
+      <AnimatedLogo textPart1="Qua" textPart2="ti" abstract style="
       z-index: 0;
       position: absolute; 
       height: 130%;
@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import Background from '@/components/Background.vue';
+import AnimatedLogo from '@/components/AnimatedLogo.vue';
 import LoginFrame from './LoginFrame.vue';
 import Toolbar from '../components/Toolbar.vue';
 
 export default {
   name: 'Login',
   components: {
-    Background,
+    AnimatedLogo,
     LoginFrame,
     Toolbar,
   },
