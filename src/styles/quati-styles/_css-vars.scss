@@ -1,0 +1,48 @@
+// ============================================================
+// Quati Styles Design System — CSS Custom Properties Bridge
+// ============================================================
+// Este arquivo exporta as variáveis SCSS como CSS Custom
+// Properties (variáveis nativas do CSS) no :root.
+//
+// Isso permite que a página ThemeEditor do Storybook edite
+// os tokens em tempo real via:
+//   document.documentElement.style.setProperty('--lg-primary', '#...')
+//
+// IMPORTANTE: Sempre sincronize este arquivo com _variables.scss
+// ============================================================
+
+@use 'variables' as v;
+
+:root {
+  // ── Paleta de Cores ──────────────────────────────────────
+  --lg-primary: #{v.$lg-primary};
+  --lg-primary-light: #{v.$lg-primary-light};
+  --lg-primary-dark: #{v.$lg-primary-dark};
+  --lg-secondary: #{v.$lg-secondary};
+  --lg-accent: #{v.$lg-accent};
+  --lg-success: #{v.$lg-success};
+  --lg-warning: #{v.$lg-warning};
+  --lg-error: #{v.$lg-error};
+  --lg-info: #{v.$lg-info};
+
+  // ── Blur / Backdrop ──────────────────────────────────────
+  --lg-blur-sm: #{v.$lg-blur-sm};
+  --lg-blur-md: #{v.$lg-blur-md};
+  --lg-blur-lg: #{v.$lg-blur-lg};
+  --lg-blur-xl: #{v.$lg-blur-xl};
+
+  // ── Border Radius ────────────────────────────────────────
+  --lg-radius-sm: #{v.$lg-radius-sm};
+  --lg-radius-md: #{v.$lg-radius-md};
+  --lg-radius-lg: #{v.$lg-radius-lg};
+  --lg-radius-xl: #{v.$lg-radius-xl};
+
+  // ── Bordas ───────────────────────────────────────────────
+  --lg-border-width: #{v.$lg-border-width};
+
+  // ── Animações ────────────────────────────────────────────
+  --lg-duration-fast: #{v.$lg-duration-fast};
+  --lg-duration-normal: #{v.$lg-duration-normal};
+  --lg-duration-slow: #{v.$lg-duration-slow};
+  --lg-duration-slower: #{v.$lg-duration-slower};
+}

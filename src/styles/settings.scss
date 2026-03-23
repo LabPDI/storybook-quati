@@ -1,0 +1,23 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Quati Styles Design System — Vuetify SASS Variable Overrides
+ * Estas variáveis são compiladas no build e alteram os valores
+ * internos do Vuetify em todos os componentes.
+ */
+
+@use 'vuetify/settings' with (
+  // Tipografia
+  $body-font-family: ('Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif),
+
+  // Border radius global
+  $border-radius-root: 16px,
+
+  // Componentes específicos
+  $card-border-radius: 20px,
+  $button-border-radius: 14px,
+  $button-text-transform: none,
+  $button-font-weight: 600,
+  $text-field-border-radius: 14px,
+  $chip-border-radius: 20px,
+);

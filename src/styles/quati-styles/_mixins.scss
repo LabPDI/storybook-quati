@@ -1,0 +1,162 @@
+// ============================================================
+// Quati Styles Design System — Mixins
+// ============================================================
+@use 'variables' as *;
+
+// ── Glass Surface ────────────────────────────────────────────
+// Aplica o efeito glassmorphism a um elemento
+@mixin glass-surface($bg: $lg-surface-white, $blur: $lg-blur-md) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+// ── Glass Border ─────────────────────────────────────────────
+// Borda translúcida com efeito de vidro
+@mixin glass-border($color: $lg-border-color, $width: $lg-border-width) {
+  border: $width solid $color;
+}
+
+// Borda com gradiente (mais fiel ao Quati Styles)
+@mixin glass-border-gradient($radius: $lg-radius-md) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: $lg-border-width;
+    background: $lg-gradient-border;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+// ── Glass Glow ───────────────────────────────────────────────
+// Sombra com brilho colorido
+@mixin glass-glow($color: $lg-primary, $intensity: 0.35) {
+  box-shadow: 0 4px 20px rgba($color, $intensity);
+}
+
+// ── Shimmer Effect ───────────────────────────────────────────
+// Efeito de brilho que passa pelo elemento no hover
+@mixin glass-shimmer() {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: $lg-gradient-shimmer;
+    transition: left $lg-duration-slow $lg-ease-smooth;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    left: 100%;
+  }
+}
+
+// ── Smooth Transition ────────────────────────────────────────
+// Transição suave estilo Apple
+@mixin smooth-transition($props: all, $duration: $lg-duration-normal, $ease: $lg-ease-smooth) {
+  transition-property: $props;
+  transition-duration: $duration;
+  transition-timing-function: $ease;
+}
+
+// ── Hover Lift ───────────────────────────────────────────────
+// Efeito de elevação suave no hover
+@mixin hover-lift($y: -2px, $shadow: $lg-shadow-lg) {
+  @include smooth-transition(transform box-shadow);
+
+  &:hover {
+    transform: translateY($y);
+    box-shadow: $shadow;
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+}
+
+// ── Hover Scale ──────────────────────────────────────────────
+// Efeito de escala suave no hover (iOS style)
+@mixin hover-scale($scale: 1.03) {
+  @include smooth-transition(transform box-shadow);
+
+  &:hover {
+    transform: scale($scale);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// ── Focus Ring ───────────────────────────────────────────────
+// Ring de focus acessível com glow
+@mixin glass-focus-ring($color: $lg-primary) {
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($color, 0.4);
+  }
+}
+
+// ── Glass Card ───────────────────────────────────────────────
+// Composição completa de um card glass
+@mixin glass-card($bg: $lg-surface-white, $blur: $lg-blur-md, $radius: $lg-radius-lg) {
+  @include glass-surface($bg, $blur);
+  @include glass-border;
+  border-radius: $radius;
+  box-shadow: $lg-shadow-md;
+}
+
+// ── Glass Input ──────────────────────────────────────────────
+// Composição para inputs
+@mixin glass-input($radius: $lg-radius-md) {
+  @include glass-surface($lg-surface-subtle, $lg-blur-sm);
+  @include glass-border($lg-border-color-dim);
+  border-radius: $radius;
+  @include smooth-transition(border-color box-shadow background);
+
+  &:focus,
+  &:focus-within {
+    background: $lg-surface-light;
+    border-color: rgba($lg-primary, 0.5);
+    box-shadow: 0 0 0 3px rgba($lg-primary, 0.15);
+  }
+}
+
+// ── Scrollbar Glass ──────────────────────────────────────────
+@mixin glass-scrollbar($width: 6px) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: $lg-radius-pill;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+}

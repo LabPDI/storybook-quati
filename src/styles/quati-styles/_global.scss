@@ -1,0 +1,116 @@
+// ============================================================
+// Quati Styles Design System — Global Styles
+// ============================================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ── Body & HTML ──────────────────────────────────────────────
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $lg-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// ── Background ───────────────────────────────────────────────
+// Um fundo suave com gradiente para dar contexto ao glass
+.v-application {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba($lg-primary, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba($lg-accent, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba($lg-primary-light, 0.04) 0%, transparent 50%),
+    #f5f7fa !important;
+}
+
+// ── Text Selection ───────────────────────────────────────────
+::selection {
+  background: rgba($lg-primary, 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba($lg-primary, 0.2);
+  color: inherit;
+}
+
+// ── Scrollbar Global ─────────────────────────────────────────
+* {
+  @include glass-scrollbar;
+}
+
+// ── Focus Global ─────────────────────────────────────────────
+*:focus-visible {
+  outline: 2px solid rgba($lg-primary, 0.4);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// ── Tipografia refinada ──────────────────────────────────────
+h1, h2, h3, h4, h5, h6,
+.text-h1, .text-h2, .text-h3,
+.text-h4, .text-h5, .text-h6 {
+  font-weight: $lg-font-weight-semibold;
+  letter-spacing: -0.02em;
+}
+
+// ── Utility Classes ──────────────────────────────────────────
+
+// Superfícies glass para uso direto
+.glass {
+  @include glass-card;
+}
+
+.glass-sm {
+  @include glass-surface($lg-surface-subtle, $lg-blur-sm);
+  @include glass-border($lg-border-color-dim);
+  border-radius: $lg-radius-sm;
+}
+
+.glass-intense {
+  @include glass-surface($lg-surface-active, $lg-blur-xl);
+  @include glass-border;
+  border-radius: $lg-radius-lg;
+  box-shadow: $lg-shadow-lg;
+}
+
+// Efeitos no hover
+.glass-hover-lift {
+  @include hover-lift;
+}
+
+.glass-hover-scale {
+  @include hover-scale;
+}
+
+.glass-hover-glow {
+  @include smooth-transition(box-shadow);
+  &:hover {
+    @include glass-glow;
+  }
+}
+
+// Shimmer effect
+.glass-shimmer {
+  @include glass-shimmer;
+}
+
+// Glow colors
+.glass-glow-primary {
+  @include glass-glow($lg-primary);
+}
+
+.glass-glow-accent {
+  @include glass-glow($lg-accent);
+}
+
+.glass-glow-success {
+  @include glass-glow($lg-success);
+}
+
+.glass-glow-error {
+  @include glass-glow($lg-error);
+}

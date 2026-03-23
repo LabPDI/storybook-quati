@@ -1,0 +1,121 @@
+// ============================================================
+// Quati Styles Design System — Animations & Keyframes
+// ============================================================
+@use 'variables' as *;
+
+// ── Shimmer ──────────────────────────────────────────────────
+@keyframes lg-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+// ── Float (sutil, tipo bolha) ────────────────────────────────
+@keyframes lg-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+// ── Pulse Glow ───────────────────────────────────────────────
+@keyframes lg-pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba($lg-primary, 0.2); }
+  50%      { box-shadow: 0 0 20px rgba($lg-primary, 0.4); }
+}
+
+// ── Scale In ─────────────────────────────────────────────────
+@keyframes lg-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ── Scale Out ────────────────────────────────────────────────
+@keyframes lg-scale-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+// ── Slide Up ─────────────────────────────────────────────────
+@keyframes lg-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Slide Down ───────────────────────────────────────────────
+@keyframes lg-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Fade In ──────────────────────────────────────────────────
+@keyframes lg-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// ── Blur In ──────────────────────────────────────────────────
+@keyframes lg-blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+// ── Utility Classes ──────────────────────────────────────────
+.lg-animate-shimmer {
+  animation: lg-shimmer 2s infinite linear;
+}
+
+.lg-animate-float {
+  animation: lg-float 3s infinite $lg-ease-smooth;
+}
+
+.lg-animate-pulse-glow {
+  animation: lg-pulse-glow 2s infinite $lg-ease-smooth;
+}
+
+.lg-animate-scale-in {
+  animation: lg-scale-in $lg-duration-slow $lg-ease-spring both;
+}
+
+.lg-animate-slide-up {
+  animation: lg-slide-up $lg-duration-slow $lg-ease-decelerate both;
+}
+
+.lg-animate-slide-down {
+  animation: lg-slide-down $lg-duration-slow $lg-ease-decelerate both;
+}
+
+.lg-animate-fade-in {
+  animation: lg-fade-in $lg-duration-normal $lg-ease-smooth both;
+}
+
+.lg-animate-blur-in {
+  animation: lg-blur-in $lg-duration-slow $lg-ease-smooth both;
+}

@@ -1,0 +1,15 @@
+// ============================================================
+// Quati Styles Design System — Entry Point
+// ============================================================
+// Importar este arquivo no main.js para aplicar o design system
+// globalmente em todos os componentes Vuetify.
+//
+// Uso: import '@/styles/quati-styles/index.scss'
+// ============================================================
+
+@use 'variables';
+@use 'css-vars';
+@use 'mixins';
+@use 'animations';
+@use 'components';
+@use 'global';
