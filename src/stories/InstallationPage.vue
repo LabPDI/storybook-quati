@@ -41,76 +41,77 @@
           compilação SASS
           instalados.</p>
         <v-sheet class="bg-surface-variant pa-4 rounded-lg mb-8" elevation="0" border>
-          <code class="d-block text-body-2 font-weight-medium">npm install vuetify @mdi/font</code>
-          <code class="d-block text-body-2 font-weight-medium mt-1">npm install -D sass vite-plugin-vuetify</code>
+          <code class="d-block text-body-2 font-weight-medium">
+            <span class="hl-keyword">npm</span> install vuetify @mdi/font
+          </code>
+          <code class="d-block text-body-2 font-weight-medium mt-1">
+            <span class="hl-keyword">npm</span> install -D sass vite-plugin-vuetify
+          </code>
         </v-sheet>
 
         <h3 class="text-h6 font-weight-bold text-primary mb-3">
           2. Estrutura de Arquivos Recomendada
         </h3>
         <p class="mb-4 text-medium-emphasis">Extraia o conteúdo do ZIP na raiz da pasta <code>src/</code> do seu projeto
-          para
-          seguir a convenção padrão.</p>
+          para seguir a convenção padrão.</p>
         <v-sheet class="bg-surface-variant pa-4 rounded-lg mb-8" elevation="0" border>
           <pre class="text-body-2 font-weight-medium" style="margin: 0;">src/
-    ├── plugins/
-    │ └── vuetify.js &lt;-- Instância do Vuetify configurada
-    ├── styles/
-    │ ├── settings.scss &lt;-- Sobrescrita de variáveis (SCSS)
-    │ └── quati-styles/ &lt;-- Design System Core
-    └── main.js</pre>
+├── plugins/
+│   └── vuetify.js       <span class="hl-comment">&lt;-- Instância do Vuetify configurada</span>
+├── styles/
+│   ├── settings.scss    <span class="hl-comment">&lt;-- Sobrescrita de variáveis (SCSS)</span>
+│   └── quati-styles/    <span class="hl-comment">&lt;-- Design System Core</span>
+└── main.js</pre>
         </v-sheet>
 
         <h3 class="text-h6 font-weight-bold text-primary mb-3">
           3. Inicialização no <code>main.js</code> ou <code>main.ts</code>
         </h3>
         <p class="mb-4 text-medium-emphasis">Faça as importações de estilo ANTES dos outros arquivos, para garantir que
-          o CSS do
-          Design System prevaleça sobre os defaults do navegador.</p>
+          o CSS do Design System prevaleça sobre os defaults do navegador.</p>
         <v-sheet class="bg-surface-variant pa-4 rounded-lg mb-8" elevation="0" border>
-          <pre class="text-body-2 font-weight-medium" style="margin: 0;">// 1. SCSS Base do Tema
-    import '@/styles/quati-styles/index.scss'
+          <pre class="text-body-2 font-weight-medium" style="margin: 0;"><span class="hl-comment">// 1. SCSS Base do Tema</span>
+<span class="hl-keyword">import</span> <span class="hl-string">'@/styles/quati-styles/index.scss'</span>
 
-    import { createApp } from 'vue'
-    import App from './App.vue'
+<span class="hl-keyword">import</span> { createApp } <span class="hl-keyword">from</span> <span class="hl-string">'vue'</span>
+<span class="hl-keyword">import</span> App <span class="hl-keyword">from</span> <span class="hl-string">'./App.vue'</span>
 
-    // 2. Instância do Vuetify já com a nossa paleta
-    import vuetify from './plugins/vuetify'
+<span class="hl-comment">// 2. Instância do Vuetify já com a nossa paleta</span>
+<span class="hl-keyword">import</span> vuetify <span class="hl-keyword">from</span> <span class="hl-string">'./plugins/vuetify'</span>
 
-    const app = createApp(App)
-    app.use(vuetify)
+<span class="hl-keyword">const</span> app = createApp(App)
+app.use(vuetify)
 
-    app.mount('#app')</pre>
+app.mount(<span class="hl-string">'#app'</span>)</pre>
         </v-sheet>
 
         <h3 class="text-h6 font-weight-bold text-primary mb-3">
           4. Adicione o Plugin ao Vite
         </h3>
         <p class="mb-4 text-medium-emphasis">O Vuetify requer que informemos a localização do <code>settings.scss</code>
-          dentro
-          da compilação do Vite para aplicar corretamente as novas fontes de Glassmorphism nos componentes padrão.</p>
+          dentro da compilação do Vite para aplicar corretamente as novas fontes e estilos.</p>
         <v-sheet class="bg-surface-variant pa-4 rounded-lg mb-8" elevation="0" border>
-          <pre class="text-body-2 font-weight-medium" style="margin: 0;">// vite.config.js
-    import { defineConfig } from 'vite'
-    import vue from '@vitejs/plugin-vue'
-    import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+          <pre class="text-body-2 font-weight-medium" style="margin: 0;"><span class="hl-comment">// vite.config.js</span>
+<span class="hl-keyword">import</span> { defineConfig } <span class="hl-keyword">from</span> <span class="hl-string">'vite'</span>
+<span class="hl-keyword">import</span> vue <span class="hl-keyword">from</span> <span class="hl-string">'@vitejs/plugin-vue'</span>
+<span class="hl-keyword">import</span> vuetify, { transformAssetUrls } <span class="hl-keyword">from</span> <span class="hl-string">'vite-plugin-vuetify'</span>
 
-    export default defineConfig({
-    plugins: [
+<span class="hl-keyword">export</span> <span class="hl-keyword">default</span> defineConfig({
+  plugins: [
     vue({ template: { transformAssetUrls } }),
 
-    // Conectando o settings.scss do Quati Styles:
+    <span class="hl-comment">// Conectando o settings.scss do Quati Styles:</span>
     vuetify({
-    autoImport: true,
-    styles: { configFile: 'src/styles/settings.scss' },
+      autoImport: <span class="hl-keyword">true</span>,
+      styles: { configFile: <span class="hl-string">'src/styles/settings.scss'</span> },
     }),
-    ],
-    css: {
+  ],
+  css: {
     preprocessorOptions: {
-    sass: { api: 'modern-compiler' }, // Padrão Dart Sass 2.0+
+      sass: { api: <span class="hl-string">'modern-compiler'</span> }, <span class="hl-comment">// Padrão Dart Sass 2.0+</span>
     },
-    },
-    })</pre>
+  },
+})</pre>
         </v-sheet>
 
         <v-alert type="success" variant="tonal" icon="mdi-check-circle" class="mt-6 font-weight-medium">
@@ -129,14 +130,17 @@
 </script>
 
 <style scoped>
-/* pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
+.hl-keyword { color: #005FB8; font-weight: bold; }
+.hl-string { color: #22863a; }
+.hl-comment { color: #6a737d; font-style: italic; }
+.hl-variable { color: #e36209; }
+
+pre {
+  line-height: 1.5;
+  color: #24292e;
 }
+
 code {
-  color: #c94665;
-  background-color: #f1f3f5;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-} */
+  color: #24292e;
+}
 </style>

@@ -102,7 +102,7 @@
 .v-app-bar,
 .v-toolbar {
   @include glass-surface($lg-surface-white, $lg-blur-lg);
-  border-bottom: 2px solid $lg-secondary !important;
+  border-bottom: 2px solid $lg-accent !important;
   box-shadow: $lg-shadow-sm !important;
 
   .v-toolbar__content {
