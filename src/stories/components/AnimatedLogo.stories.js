@@ -1,7 +1,6 @@
 import AnimatedLogo from '../../components/AnimatedLogo.vue';
 
 export default {
-  tags: ["!dev"],
   title: 'Componentes/AnimatedLogo',
   component: AnimatedLogo,
   argTypes: {
