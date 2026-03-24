@@ -1,0 +1,6 @@
+import{j as e,M as i}from"./index-DmVDFL8A.js";import{useMDXComponents as t}from"./index-MrsP81D1.js";import"./iframe-D2s5k51c.js";import"./index-Dc4p7Je0.js";import"./index-DrFu-skq.js";function r(n){const o={h1:"h1",p:"p",...t(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"Documentos / Manual PGE MS"}),`
+`,e.jsx(o.h1,{id:"manual-pge-ms-maio-2023",children:"Manual PGE MS (Maio 2023)"}),`
+`,e.jsx(o.p,{children:"Abaixo você pode consultar o manual oficial da PGE MS."}),`
+`,e.jsx("div",{style:{width:"100%",height:"800px",border:"1px solid #e2e8f0",borderRadius:"12px",overflow:"hidden",marginTop:"20px"},children:e.jsx("iframe",{src:"./assets/manual-pge-ms.pdf",width:"100%",height:"100%",style:{border:"none"},title:"Manual PGE MS"})}),`
+`,e.jsx("div",{style:{marginTop:"20px",padding:"15px",background:"#f8fafc",borderRadius:"8px",fontSize:"14px",color:"#4a5568"},children:e.jsxs(o.p,{children:[e.jsx("strong",{children:"Dica:"}),` Se o manual não carregar corretamente, verifique se o
+arquivo PDF ainda está presente no diretório `,e.jsx("code",{children:"public/assets"}),"."]})})]})}function p(n={}){const{wrapper:o}={...t(),...n.components};return o?e.jsx(o,{...n,children:e.jsx(r,{...n})}):r(n)}export{p as default};
