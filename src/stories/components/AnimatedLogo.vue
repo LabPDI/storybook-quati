@@ -21,7 +21,7 @@
         <g transform="translate(180, 90)">
             <!-- Mascote animado usando foreignObject para preservar as animações CSS internas -->
             <foreignObject x="-90" y="-145" width="150" height="300">
-                <object data="/src/assets/teste_quati_animado_novo.svg" type="image/svg+xml"
+                <object :data="mascotSvg" type="image/svg+xml"
                     style="width: 100%; height: 100%; object-fit: contain; pointer-events: none;"></object>
             </foreignObject>
 
@@ -48,6 +48,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import mascotSvg from '@/assets/teste_quati_animado_novo.svg'
 
 const props = defineProps({
     textPart1: {

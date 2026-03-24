@@ -19,6 +19,9 @@
         <v-btn color="secondary">Secondary</v-btn>
       </v-col>
       <v-col cols="auto">
+        <v-btn color="accent">Accent</v-btn>
+      </v-col>
+      <v-col cols="auto">
         <v-btn color="success">Success</v-btn>
       </v-col>
       <v-col cols="auto">

@@ -1,12 +1,13 @@
 <template>
   <div class="quati-mascot-container" :class="stateClass">
-    <object data="/src/assets/teste_quati_animado_novo.svg" type="image/svg+xml" class="quati-mascot-img"
+    <object :data="mascotSvg" type="image/svg+xml" class="quati-mascot-img"
       aria-label="Quati Mascot Animado"></object>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue';
+import mascotSvg from '@/assets/teste_quati_animado_novo.svg';
 
 const props = defineProps({
   state: {
