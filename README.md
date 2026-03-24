@@ -1,79 +1,72 @@
-# Vuetify (Default)
+# Quati Styles - Storybook
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+Este repositório contém o **Design System (Quati Styles)** da PGE-MS, documentado e visualizado interativamente através do [Storybook](https://storybook.js.org/).
 
-## ❗️ Important Links
+O principal objetivo deste projeto é centralizar a documentação, componentes visuais, assets e tokens de design (cores, tipografia, espaçamentos) baseados no Vuetify 3 com uma estética Glassmorphism, permitindo que as equipes de desenvolvimento da PGE-MS construam interfaces consistentes, modernas e acessíveis.
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+---
 
-## 💿 Install
+## 🚀 Demonstração (Live Demo)
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+A documentação interativa e a galeria de componentes estão publicadas no GitHub Pages e são atualizadas automaticamente a cada merge na branch principal:
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
+👉 **[Acessar o Storybook do Quati Styles](https://labpdi.github.io/storybook-quati/latest/)**
 
-After completing the installation, your environment is ready for Vuetify development.
+---
 
-## ✨ Features
+## 🛠️ Como Rodar o Projeto Localmente
 
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+### Pré-requisitos
 
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
+- Node.js (versão 18 ou superior)
+- NPM, Yarn ou PNPM
 
-## 💡 Usage
+### Instalação
 
-This section covers how to start the development server and build your project for production.
-
-### Starting the Development Server
-
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
+Clone o repositório e instale as dependências:
 
 ```bash
-yarn dev
+git clone https://github.com/LabPDI/storybook-quati.git
+cd storybook-quati
+npm install
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+### Desenvolvimento (Modo Dev)
 
-> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
-
-### Building for Production
-
-To build your project for production, use:
+Para subir o Storybook e o ambiente de desenvolvimento local (com hot-reload):
 
 ```bash
-yarn build
+npm run storybook
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+Isso iniciará o servidor na porta `6006`. Abra [http://localhost:6006](http://localhost:6006) no seu navegador. O código em Vue pode ser utilizado testando nas instâncias internas (via `npm run dev`), mas o foco deste repositório é rodar o Storybook.
 
-Once the build process is completed, your application will be ready for deployment in a production environment.
+### Build (Produção)
 
-## 💪 Support Vuetify Development
+Para compilar o Storybook localmente como um conjunto de arquivos estáticos:
 
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
+```bash
+npm run build-storybook
+```
 
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
+Os arquivos gerados ficarão na pasta `storybook-static/`. Você pode servir essa pasta com qualquer servidor web simples, ou implantá-la onde preferir. O workflow atual já publica essa pasta automaticamente no GitHub Pages pelo comando `npm run deploy-storybook`.
 
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
+---
 
-Copyright (c) 2016-present Vuetify, LLC
+## 📦 Estrutura do Projeto
+
+- `src/styles/quati-styles/`: Núcleo do Design System (tokens SCSS, estilos de componentes, dark mode).
+- `src/plugins/vuetify.js`: Configuração do Vuetify instanciando o tema construído (Quati).
+- `src/stories/`: Documentação e exemplos interativos de componentes, divididos por tipologia (Buttons, Forms, ThemeEditor, etc).
+- `.github/workflows/deploy-storybook.yml`: Action responsável pelo deploy automático para o GitHub Pages (pasta `/latest`).
+
+---
+
+## 🤝 Contribuindo
+
+Seja adicionando um novo componente de exemplo, atualizando os tokens de cor, ou melhorando a documentação:
+
+1. Crie uma branch para a sua feature (`git checkout -b feature/novo-componente`)
+2. Faça commit das mudanças (`git commit -m 'feat: adiciona componente X'`)
+3. Faça o push para a branch (`git push origin feature/novo-componente`)
+4. Abra um Pull Request.
